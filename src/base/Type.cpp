@@ -57,7 +57,6 @@ HalideIR::Expr Type::min() const {
     } else if (is_uint()) {
         return Internal::UIntImm::make(*this, 0);
     } else {
-        internal_assert(is_float());
         if (bits() == 16) {
             return Internal::FloatImm::make(*this, -65504.0);
         } else if (bits() == 32) {
